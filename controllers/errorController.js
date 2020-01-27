@@ -58,6 +58,7 @@ module.exports = (err, req, res, next) => {
   } else {
     // handle errors from mongoose
     let error = { ...err };
+    error.message = err.message;
     if (error.name === 'CastError') {
       error = handleCastErrorDB(error);
     }
