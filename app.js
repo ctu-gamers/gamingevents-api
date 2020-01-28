@@ -6,6 +6,7 @@ const helmet = require('helmet');
 const mongoSanitize = require('express-mongo-sanitize');
 const xss = require('xss-clean');
 const hpp = require('hpp');
+const cors = require('cors');
 
 const userRouter = require('./routes/userRoutes');
 
@@ -16,7 +17,9 @@ const securityController = require('./controllers/securityController');
 const app = express();
 
 // 1. GLOABL MIDDLEWARES
-
+// Implement CORS
+app.use(cors());
+app.options(process.env.ALLOWED_ORIGIONS, cors());
 // Serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 
