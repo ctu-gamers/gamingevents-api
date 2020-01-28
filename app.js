@@ -11,6 +11,7 @@ const userRouter = require('./routes/userRoutes');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
+const securityController = require('./controllers/securityController');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Set security HTTP headers
 app.use(helmet());
+app.use(securityController.protectFromClient);
 
 // Development logging
 if (process.env.NODE_ENV === 'development') {
