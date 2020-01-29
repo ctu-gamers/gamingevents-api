@@ -15,6 +15,7 @@ const filterObj = (obj, ...allowedFields) => {
 
 exports.getMe = (req, res, next) => {
   req.params.id = req.user._id;
+  // this will pass the id to next middleware
   next();
 };
 
@@ -37,9 +38,7 @@ exports.updateMe = catchAsync(async (req, res, next) => {
   });
   res.status(200).json({
     status: 'success',
-    data: {
-      user: updatedUser
-    }
+    data: updatedUser
   });
 });
 
