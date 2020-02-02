@@ -13,17 +13,20 @@ const userSchema = new mongoose.Schema(
       lowercase: true,
       validate: [validator.isEmail, 'Please provide a valid email']
     },
+    username: {
+      type: String,
+      unique: [true, 'The username speficied has been taken by another user'],
+      default: ''
+    },
     password: {
       type: String,
       required: [true, 'Please provide a password'],
       minlength: 8,
       select: false
     },
-    name: {
-      type: String
-    },
     photo: {
-      type: String
+      type: String,
+      default: ''
     },
     role: {
       type: String,
@@ -55,6 +58,7 @@ userSchema.pre(/^find/, function(next) {
 
   // tell to exclude all inactiev users from all queries
   this.find({ active: { $ne: false } });
+  this.select('-__v -passwordChangedAt');
   next();
 });
 

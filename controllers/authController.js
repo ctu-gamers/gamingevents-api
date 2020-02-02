@@ -31,8 +31,8 @@ const createAndSendToken = (user, statusCode, res) => {
   user.password = undefined;
   res.status(statusCode).json({
     status: 'success',
-    token: token,
     data: {
+      token: token,
       user: user
     }
   });
@@ -172,9 +172,9 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
   createAndSendToken(user, 200, res);
 });
 
-exports.updatePassword = catchAsync(async (req, res, next) => {
+exports.updateMyPassword = catchAsync(async (req, res, next) => {
   // 1) Get user from collection
-  const user = await User.findById(req.user.id).select('+password');
+  const user = await User.findById(req.user._id).select('+password');
   // 2) Check if POSTed password is correct
   const correct = await user.correctPassword(
     req.body.currentPassword,
@@ -185,7 +185,6 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   }
   // 3) If yes, update the password
   user.password = req.body.password;
-  user.passwordConfirm = req.body.passwordConfirm;
   await user.save();
   // 4) Log user in, send JWT
   createAndSendToken(user, 200, res);

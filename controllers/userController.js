@@ -2,16 +2,7 @@ const User = require('./../models/userModel');
 const AppError = require('./../utils/appError');
 const catchAsync = require('./../utils/catchAsync');
 const factory = require('./handlerFactory');
-
-const filterObj = (obj, ...allowedFields) => {
-  const newObj = {};
-  Object.keys(obj).forEach(el => {
-    if (allowedFields.includes(el)) {
-      newObj[el] = obj[el];
-    }
-    return newObj;
-  });
-};
+const filterBody = require('./../utils/filterBody');
 
 exports.getMe = (req, res, next) => {
   req.params.id = req.user._id;
@@ -30,9 +21,9 @@ exports.updateMe = catchAsync(async (req, res, next) => {
     );
   }
   // 2) Filter out unwanted fields
-  const filteredBody = filterObj(req.body, 'name', 'email');
+  const filteredBody = filterBody(req.body, 'username');
   // 3) Update user document
-  const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
+  const updatedUser = await User.findByIdAndUpdate(req.user._id, filteredBody, {
     new: true,
     runValidators: true
   });

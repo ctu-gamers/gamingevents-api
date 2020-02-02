@@ -14,9 +14,9 @@ router.post('/login', authController.login);
 // This middleware applies to all subsequent routes defined after it.
 router.use(authController.protect);
 
-// router.patch('/updateMyPassword', authController.updatePassword);
+router.patch('/updateMyPassword', authController.updateMyPassword);
 router.get('/me', userController.getMe, userController.getUser);
-// router.patch('/updateMe', userController.updateMe);
+router.patch('/updateMe', userController.updateMe);
 // router.delete('/deleteMe', userController.deleteMe);
 
 router.use(authController.restrictTo(userRoles.admin));
