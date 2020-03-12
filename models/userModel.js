@@ -42,7 +42,15 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
       select: false
-    }
+    },
+    uplay: String,
+    steam: String,
+    psn: String,
+    switchFC: String,
+    xboxlive: String,
+    epicGames: String,
+    gog: String,
+    eaOrigin: String
   },
   {
     // Make sure to select the virtual properties as well when we have virtual properties

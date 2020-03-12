@@ -66,7 +66,7 @@ exports.updateMe = catchAsync(async (req, res, next) => {
     );
   }
   // 2) Filter out unwanted fields
-  const newBody = filterBody(req.body, 'username');
+  const newBody = filterBody.objectFilterOut(req.body);
   if (req.file) {
     newBody.photo = req.file.filename;
   }
