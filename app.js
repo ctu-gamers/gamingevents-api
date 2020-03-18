@@ -9,6 +9,7 @@ const hpp = require('hpp');
 const cors = require('cors');
 
 const userRouter = require('./routes/userRoutes');
+const gameRouter = require('./routes/gameRoutes');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
@@ -77,6 +78,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use('/api/v1/users', userRouter);
+app.use('/api/v1/games', gameRouter);
 
 // define the uncaught routes handler
 app.all('*', (req, res, next) => {

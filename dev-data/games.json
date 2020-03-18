@@ -1,0 +1,147 @@
+{
+  "games": [
+    {
+      "id": "261226",
+      "title": "Warcraft III: Reforged",
+      "releaseDate": "2020-01-29",
+      "platforms": [
+        {
+          "platform": {
+            "id": 4,
+            "name": "PC",
+            "slug": "pc"
+          }
+        },
+        {
+          "platform": {
+            "id": 5,
+            "name": "macOS",
+            "slug": "macos"
+          }
+        }
+      ],
+      "genres": [
+        {
+          "id": 10,
+          "name": "Strategy",
+          "slug": "strategy"
+        },
+        {
+          "id": 5,
+          "name": "RPG",
+          "slug": "role-playing-games-rpg"
+        }
+      ],
+      "thumbnail": "https://media.rawg.io/media/games/4e9/4e908c9270228430128105bcd88e51bc.jpg"
+    },
+    {
+      "id": "22508",
+      "title": "Overwatch",
+      "releaseDate": "2016-05-24",
+      "platforms": [
+        {
+          "platform": {
+            "id": 4,
+            "name": "PC",
+            "slug": "pc"
+          }
+        },
+        {
+          "platform": {
+            "id": 1,
+            "name": "Xbox One",
+            "slug": "xbox-one"
+          }
+        },
+        {
+          "platform": {
+            "id": 18,
+            "name": "PlayStation 4",
+            "slug": "playstation4"
+          }
+        },
+        {
+          "platform": {
+            "id": 7,
+            "name": "Nintendo Switch",
+            "slug": "nintendo-switch"
+          }
+        }
+      ],
+      "genres": [
+        {
+          "id": 40,
+          "name": "Casual",
+          "slug": "casual"
+        },
+        {
+          "id": 2,
+          "name": "Shooter",
+          "slug": "shooter"
+        },
+        {
+          "id": 59,
+          "name": "Massively Multiplayer",
+          "slug": "massively-multiplayer"
+        },
+        {
+          "id": 4,
+          "name": "Action",
+          "slug": "action"
+        }
+      ],
+      "thumbnail": "https://media.rawg.io/media/games/4ea/4ea507ceebeabb43edbc09468f5aaac6.jpg"
+    },
+    {
+      "id": "22508",
+      "title": "Battlefield V",
+      "releaseDate": "2018-11-20",
+      "platforms": [
+        {
+          "platform": {
+            "id": 4,
+            "name": "PC",
+            "slug": "pc"
+          }
+        },
+        {
+          "platform": {
+            "id": 1,
+            "name": "Xbox One",
+            "slug": "xbox-one"
+          }
+        },
+        {
+          "platform": {
+            "id": 18,
+            "name": "PlayStation 4",
+            "slug": "playstation4"
+          }
+        }
+      ],
+      "genres": [
+        {
+          "id": 59,
+          "name": "Massively Multiplayer",
+          "slug": "massively-multiplayer"
+        },
+        {
+          "id": 2,
+          "name": "Shooter",
+          "slug": "shooter"
+        },
+        {
+          "id": 3,
+          "name": "Adventure",
+          "slug": "adventure"
+        },
+        {
+          "id": 4,
+          "name": "Action",
+          "slug": "action"
+        }
+      ],
+      "thumbnail": "https://media.rawg.io/media/games/45b/45b57ed59de4b84effd8f6bc4b7bf515.jpg"
+    }
+  ]
+}
